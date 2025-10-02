@@ -105,6 +105,11 @@
     "L+ /usr/local/bin - - - - /run/current-system/sw/bin/"
   ];
 
+  # System wide env
+  environment.variables = {
+    KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
