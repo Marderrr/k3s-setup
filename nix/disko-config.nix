@@ -22,7 +22,7 @@
               };
             }; 
             lvm_system = {
-              size = "16G";
+              size = "60G";
               content = {
                 type = "lvm_pv";
                 vg = "vg_system";
@@ -44,7 +44,7 @@
         type = "lvm_vg";
         lvs = {
           lv_system = {
-            size = "10G";
+            size = "40G";
             content = {
               type = "filesystem";
               format = "xfs";
