@@ -10,8 +10,6 @@ releases:
     chart: metallb/metallb
     namespace: metallb-system
     version: 0.15.2
-    values:
-      - values/metallb.yaml
 
   - name: longhorn
     namespace: longhorn-system
