@@ -56,7 +56,7 @@
     isNormalUser = true;
     initialPassword = "123";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    openssh.authorizedKeys.keys = [ "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC5QqPCxSkG7+Zvb+t5pTOgqjdxR3zfw1zPTfeDpFgfGLgyl8tiULL+OZMK2jAGKV5Te6bBJncxr9gUFnARXVwdkTqiOWB9hChBYL8ln3LKhu/euALK76Jc1ZB6MMKqs0D2Ve1rGmZnam3+hKeXgSfHMcGDatxESnZQN7k3rJDRpBAfLWiaKL+8VyG4S0Z/n8DcMNo12kIb5lImi0otWx70t9RLANFHK+TfvbtcSq4xOZLLKPEhuNi4cZucXoGKlm+Re5sVeHriKE57IGzmqewE0a52a8wGQYd1dAnMVQiSbdrWKTUA3rFaMJeJ5VSL49mCmiPUEEAhMDB0Nk64BbxBla4gvagW/Wxj/yUJnPK5p9y47e1BHjMQL/X++oC8Ab4sqYeT5fLoWhwpdzo+S7weN+B+MpdARpsnpF5DGQS78TvQ9Ao1LmaehjlyfYXowRUMV7nk1qTH6WrPj9xSLjOvt8pr8ckhQm/XEz4Dfc+GwDM+FqaRxJXztWfw7c0tGPUrhe1X+/6PVY1Sa+t9YC8hTDW/dpqimMUukjLJMOyVdIAYCGE/8zIZMPyR/qZo9vNrVs9JIVGdcP+wo+OzIQDzCr2fVgH7ctw9Gm4wOwp94rcIVSxNdANESvncjV95zIhMDBJ0rsMcKtqt/GVZfU2+ej+XH/Usma4XKmYTA975Gw== umb\tim.bosshard@UMB-PF31ACCF" ];
+    openssh.authorizedKeys.keys = [ "<KEY>" ];
   };
 
   # List packages installed in system profile.
@@ -84,19 +84,19 @@
   };
 
   # rest of the nodes
-  # services.k3s = 
-  #   enable = true;
-  #   role = "server"; # Or "agent" for worker only nodes
-  #   tokenFile = "/var/lib/rancher/k3s/server/token";
-  #   serverAddr = "https://kepler-1:6443";
-  #   extraFlags = toString [
-  #     "--disable=servicelb"
-  #     "--disable=local-storage"
-  #     "--disable-helm-controller"
-  #   ]; 
-  # };
+  #services.k3s = {
+  #  enable = true;
+  #  role = "server"; # Or "agent" for worker only nodes
+  #  token = "<TOKEN>";
+  #  serverAddr = "https://<IP>:6443";
+  #  extraFlags = toString [
+  #    "--disable=servicelb"
+  #    "--disable=local-storage"
+  #    "--disable-helm-controller"
+  #  ]; 
+  #};
 
-  # Longhorn + fix
+  # Longhorn-Things + fix
   services.openiscsi = {
     enable = true;
     name = "${config.networking.hostName}-initiatorhost";
@@ -128,8 +128,7 @@
 
   # Open ports in the firewall.
   # Or disable the firewall altogether.
-  #networking.firewall.enable = true;
-
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
