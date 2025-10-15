@@ -14,7 +14,7 @@ cd helm
 rm -rf /root/.local/share/helm/plugins
 rm -rf /root/.cache/helm
 helm plugin install https://github.com/jkroepke/helm-diff
-helm sync
+helmfile sync
 ```
 ### Kustomize
 ```
