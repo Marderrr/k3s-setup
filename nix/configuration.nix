@@ -72,29 +72,29 @@
 
   # K3s
   # first node
-  #services.k3s = {
-  #  enable = true;
-  #  role = "server";
-  #  clusterInit = true;
-  #  extraFlags = toString [
-  #    "--disable=servicelb"
-  #    "--disable=local-storage"
-  #    "--disable-helm-controller"
-  #  ];
-  #};
-
-  # rest of the nodes
   services.k3s = {
     enable = true;
-    role = "server"; # Or "agent" for worker only nodes
-    token = "K1081f371390e8ace4a19d8675eac54ccfb9d053e9cca77717e6990e4f667df7c99::server:e823c7d3744016ab1b0b2f9e77b8bb4d";
-    serverAddr = "https://192.168.68.133:6443";
+    role = "server";
+    clusterInit = true;
     extraFlags = toString [
       "--disable=servicelb"
       "--disable=local-storage"
       "--disable-helm-controller"
-    ]; 
+    ];
   };
+
+  # rest of the nodes
+  #services.k3s = {
+  #  enable = true;
+  #  role = "server"; # Or "agent" for worker only nodes
+  #  token = "K1081f371390e8ace4a19d8675eac54ccfb9d053e9cca77717e6990e4f667df7c99::server:e823c7d3744016ab1b0b2f9e77b8bb4d";
+  #  serverAddr = "https://192.168.68.133:6443";
+  #  extraFlags = toString [
+  #    "--disable=servicelb"
+  #    "--disable=local-storage"
+  #    "--disable-helm-controller"
+  #  ]; 
+  #};
 
   # Longhorn-Things + fix
   services.openiscsi = {
