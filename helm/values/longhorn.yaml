@@ -1,2 +1,3 @@
 defaultSettings:
   defaultDataPath: /data/longhorn
+  storageReservedPercentageForDefaultDisk: 5
