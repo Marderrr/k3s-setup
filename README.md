@@ -48,3 +48,7 @@ Uncomment/comment section in configuration.nix and copy token `/var/lib/rancher/
 ```
 nix run github:nix-community/nixos-anywhere --extra-experimental-features "nix-command flakes" -- --flake '.#kepler-<NUMBER>' nixos@<IP>
 ```
+### Configure Network
+```
+nmtui
+```
