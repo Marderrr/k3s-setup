@@ -20,6 +20,10 @@ Change `NFS IP`
 ```
 nix run github:nix-community/nixos-anywhere --extra-experimental-features "nix-command flakes" -- --flake '.#kepler-1' nixos@<IP>
 ```
+### Configure Network
+```
+nmtui
+```
 ### Clone Repo
 ```
 git clone https://github.com/Marderrr/k3s-setup.git
