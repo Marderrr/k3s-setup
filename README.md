@@ -45,6 +45,7 @@ kubectl apply -k .
 ### Expose Longhorn UI
 ```
 kubectl -n longhorn-system patch svc longhorn-frontend -p '{"spec": {"type": "NodePort"}}'
+kubectl -n longhorn-system get svc longhorn-frontend
 ```
 ## Other Nodes
 Uncomment/comment section in configuration.nix and copy token `/var/lib/rancher/k3s/server/token` from node 1 to configuration.nix
