@@ -64,7 +64,7 @@
         type = "lvm_vg";
         lvs = {
           lv_data = {
-            size = "1G";
+            size = "100G";
             content = {
               type = "filesystem";
               format = "xfs";
