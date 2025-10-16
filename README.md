@@ -9,7 +9,7 @@
    4.  Copy hardware config and replace it
 ## Change Configs
 ### /nix/configuration.nix
-Change `<IP>`, `<INTERFACE>` and `<SSH KEY>`
+Change `<SSH KEY>`
 ### /kustomize/metallb/default.yaml
 Change `IP Address Pool`
 ### /kustomize/longhorn/backup-target.yaml
