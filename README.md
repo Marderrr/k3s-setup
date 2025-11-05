@@ -7,9 +7,12 @@
    2.  SSH into NixOS Installer
    3.  Generate config `nixos-generate-config`
    4.  Copy hardware config and replace it
+4. Get storage device name `lsblk`
 ## Change Configs
 ### /nix/configuration.nix
 Change `<SSH KEY>`
+### /nix/disko-config.nix
+Change `disko configuration` to your requirements and disk names
 ### /kustomize/metallb/default.yaml
 Change `IP Address Pool`
 ### /kustomize/longhorn/backup-target.yaml
